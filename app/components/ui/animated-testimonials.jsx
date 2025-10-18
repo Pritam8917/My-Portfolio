@@ -56,7 +56,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0 origin-bottom"
               >
-                <Image
+                <img
                   src={testimonial.src}
                   alt={testimonial.name}
                   width={500}

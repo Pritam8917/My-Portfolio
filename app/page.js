@@ -136,7 +136,7 @@ export default function SpotlightNewDemo() {
               zIndex: 0,
             }}
           ></div>
-          <Image
+          <img
             alt="Pritam Das Adhikari avatar"
             className=" top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none  absolute right-[-30px] w-[min(45vw,780px)] h-auto max-h-[90vh] z-[10] opacity-100 transform-none"
             src="/assets/Avatar.png"
