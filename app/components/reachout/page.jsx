@@ -30,21 +30,21 @@ const ContactPage = () => {
       className="min-h-screen bg-black text-white  px-6 md:px-20 flex flex-col md:flex-row items-center gap-10 py-10 md:py-20 "
     >
       {/* Left Image Section */}
-     <div className="w-full md:w-1/2 flex justify-center">
-      <motion.img
-        alt="Contact Illustration"
-        src="/assets/contactbot.png"
-        className="w-82 md:w-140 rounded-2xl shadow-lg object-cover"
-        animate={{
-          y: [0, -20, 0], // moves up 20px and back down smoothly
-        }}
-        transition={{
-          duration: 3, // time for one full up-down cycle
-          ease: "easeInOut",
-          repeat: Infinity, // loops forever
-        }}
-      />
-    </div>
+      <div className="w-full md:w-1/2 flex justify-center">
+        <motion.img
+          alt="Contact Illustration"
+          src="/assets/contactbot.png"
+          className="w-82 md:w-140 rounded-2xl shadow-lg object-cover"
+          animate={{
+            y: [0, -20, 0], // moves up 20px and back down smoothly
+          }}
+          transition={{
+            duration: 3, // time for one full up-down cycle
+            ease: "easeInOut",
+            repeat: Infinity, // loops forever
+          }}
+        />
+      </div>
 
       {/* Right Form Section */}
       <div className="w-full md:w-1/2 bg-white/5 p-8 sm:py-12 rounded-2xl shadow-lg border border-white/10">

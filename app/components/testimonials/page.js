@@ -80,7 +80,6 @@ export default function Testimonials() {
           <AnimatedTestimonials testimonials={testimonials} />
         </div>
       </section>
-     
     </BackgroundLines>
   );
 }

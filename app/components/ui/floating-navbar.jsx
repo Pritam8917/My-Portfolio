@@ -52,9 +52,7 @@ export const FloatingNav = ({ navItems, className }) => {
         ))}
         <button className="border text-sm font-medium relative border-white/20 text-white px-4 py-2 rounded-full">
           <a href="#contact">Reachout</a>
-          <span
-            className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px"
-          />
+          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
         </button>
       </motion.div>
     </AnimatePresence>

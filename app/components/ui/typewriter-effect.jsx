@@ -72,7 +72,11 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
   );
 };
 
-export const TypewriterEffectSmooth = ({ words, className, cursorClassName }) => {
+export const TypewriterEffectSmooth = ({
+  words,
+  className,
+  cursorClassName,
+}) => {
   const wordsArray = words.map((word) => ({
     ...word,
     text: word.text.split(""),
@@ -108,9 +112,7 @@ export const TypewriterEffectSmooth = ({ words, className, cursorClassName }) =>
         whileInView={{ width: "fit-content" }}
         transition={{ duration: 2, ease: "linear", delay: 1 }}
       >
-        <div
-          className="text-xl sm:text-md md:text-xl lg:text-3xl xl:text-5xl font-bold whitespace-nowrap"
-        >
+        <div className="text-xl sm:text-md md:text-xl lg:text-3xl xl:text-5xl font-bold whitespace-nowrap">
           {renderWords()}
         </div>
       </motion.div>

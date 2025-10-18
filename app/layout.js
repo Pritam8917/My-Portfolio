@@ -6,7 +6,7 @@ import Experience from "./components/experience/page";
 import Projects from "./components/projects/page";
 import Testimonials from "./components/testimonials/page";
 import Reachout from "./components/reachout/page";
-import Footer from "./components/Footer/page";
+import Footer from "./components/footer/page";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

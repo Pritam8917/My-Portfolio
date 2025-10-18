@@ -89,40 +89,40 @@ export default function Projects() {
   ];
 
   return (
-   <section className="bg-black text-white px-6 md:px-20 py-10" id="projects">
-  <div className="flex flex-col items-center text-center mb-24">
-    <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-      Featured Projects
-    </h2>
-    <p className="text-lg text-slate-300 max-w-2xl">
-      Showcasing my latest web and software creations built with modern technologies.
-    </p>
-  </div>
-
-  {/* Grid Layout */}
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-20 place-items-center">
-    {projects.map((project, i) => (
-      <div key={i} className="flex flex-col items-center">
-        <PinContainer title={`/${project.title}`} href={project.link}>
-          <div className="flex flex-col p-6 tracking-tight text-slate-100/50 w-[25rem] h-[20rem] bg-zinc-900/60 border border-zinc-700 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500">
-            <h3 className="text-2xl font-semibold text-white mb-3">
-              {project.title}
-            </h3>
-            <p className="text-slate-400 leading-relaxed">{project.desc}</p>
-            <div
-              className={`flex flex-1 w-full rounded-lg mt-6 bg-gradient-to-br ${project.gradient} opacity-80 hover:opacity-100 transition-all duration-500`}
-            />
-          </div>
-        </PinContainer>
-
-        {/* Tooltip under each card */}
-        <div className="pt-14 flex justify-center w-full flex-row items-center">
-          <AnimatedTooltip items={people} />
-        </div>
+    <section className="bg-black text-white px-6 md:px-20 py-10" id="projects">
+      <div className="flex flex-col items-center text-center mb-24">
+        <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+          Featured Projects
+        </h2>
+        <p className="text-lg text-slate-300 max-w-2xl">
+          Showcasing my latest web and software creations built with modern
+          technologies.
+        </p>
       </div>
-    ))}
-  </div>
-</section>
 
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-20 place-items-center">
+        {projects.map((project, i) => (
+          <div key={i} className="flex flex-col items-center">
+            <PinContainer title={`/${project.title}`} href={project.link}>
+              <div className="flex flex-col p-6 tracking-tight text-slate-100/50 w-[25rem] h-[20rem] bg-zinc-900/60 border border-zinc-700 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500">
+                <h3 className="text-2xl font-semibold text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-slate-400 leading-relaxed">{project.desc}</p>
+                <div
+                  className={`flex flex-1 w-full rounded-lg mt-6 bg-gradient-to-br ${project.gradient} opacity-80 hover:opacity-100 transition-all duration-500`}
+                />
+              </div>
+            </PinContainer>
+
+            {/* Tooltip under each card */}
+            <div className="pt-14 flex justify-center w-full flex-row items-center">
+              <AnimatedTooltip items={people} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
