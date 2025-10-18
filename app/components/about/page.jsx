@@ -1,116 +1,185 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 const About = () => {
+  // Animation variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay },
+    }),
+  };
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
+    },
+  };
+
   return (
     <section
       id="about"
       className="min-h-screen w-full flex items-center justify-center relative bg-black text-white overflow-hidden"
       aria-label="About me"
     >
+      {/* Animated gradient blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-10 -left-10 w-[360px] h-[360px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-20 blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-0 right-10 w-[420px] h-[420px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63]opacity-15 blur-[140px] animate-pulse delay-300"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-20 w-[220px] h-[220px] rounded-full bg-gradient-to-r from-[#00bf8f] to-[#1CD8D2] opacity-10 blur-[100px]"></div>
+        <motion.div
+          className="absolute -top-10 -left-10 w-[360px] h-[360px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1CD8D2] opacity-20 blur-[120px]"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-10 w-[420px] h-[420px] rounded-full bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63] opacity-15 blur-[140px]"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.25, 0.15] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-20 w-[220px] h-[220px] rounded-full bg-gradient-to-r from-[#00bf8f] to-[#1CD8D2] opacity-10 blur-[100px]"
+          animate={{ scale: [1, 1.3, 1], rotate: [0, 15, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
       </div>
-      <div className="relative z-10 max-w-6xl w-full mx-auto px-6 md:px-10 lg:px-12 py-20 flex flex-col gap-12">
-        <div
+
+      {/* Main Content */}
+      <motion.div
+        className="relative z-10 max-w-6xl w-full mx-auto px-6 md:px-10 lg:px-12 py-20 flex flex-col gap-12"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.div
           className="flex flex-col md:flex-row items-center md:items-stretch gap-8"
-          style={{ opacity: 1, transform: "none" }}
+          variants={fadeUp}
         >
-          <div
+          {/* Profile Image */}
+          <motion.div
             className="relative w-[160px] h-[160px] md:w-[200px] md:h-[200px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#1CD8D2]/20 to-[#302b63]/20 border border-[#1CD8D2]/25"
-            aria-hidden="true"
-            style={{ transform: "none" }}
+            whileHover={{ scale: 1.05, rotate: 1 }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="absolute inset-0"></div>
-            <Image alt="test" src="/assets/Pritam.jpg" layout="fill" objectFit="cover" />
-          </div>
-          <div className="flex-1 flex flex-col justify-center text-center md:text-left">
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63]">
+            <Image
+              alt="Pritam Das Adhikari"
+              src="/assets/Pritam.jpg"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 hover:scale-105"
+            />
+          </motion.div>
+
+          {/* Text Content */}
+          <motion.div
+            className="flex-1 flex flex-col justify-center text-center md:text-left"
+            variants={fadeUp}
+            custom={0.3}
+          >
+            <motion.h2
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63]"
+              variants={fadeUp}
+              custom={0.4}
+            >
               Pritam Das Adhikari
-            </h2>
-            <p className="mt-2 text-lg sm:text-xl text-white/90 font-semibold">
+            </motion.h2>
+
+            <motion.p
+              className="mt-2 text-lg sm:text-xl text-white/90 font-semibold"
+              variants={fadeUp}
+              custom={0.5}
+            >
               Full Stack Developer
-            </p>
-            <p className="mt-4 text-gray-300 leading-relaxed text-base sm:text-lg max-w-2xl md:max-w-3xl">
+            </motion.p>
+
+            <motion.p
+              className="mt-4 text-gray-300 leading-relaxed text-base sm:text-lg max-w-2xl md:max-w-3xl"
+              variants={fadeUp}
+              custom={0.6}
+            >
               I build scalable, modern applications with a strong focus on clean
               architecture, delightful UX, and performance. My toolkit spans
-              Java, React, Next.js, JavaScript, Tailwind CSS, and RestfulAPI—
+              Java, React, Next.js, JavaScript, Tailwind CSS, and RESTful APIs—
               bringing ideas to life from concept to production with robust APIs
               and smooth interfaces.
-            </p>
-            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-xl">
-              <div
-                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center"
-                style={{ opacity: 1, transform: "none" }}
-              >
-                <div className="text-sm text-gray-400">Experience</div>
-                <div className="text-base font-semibold text-white">
-                  1+ years
-                </div>
-              </div>
-              <div
-                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center"
-                style={{ opacity: 1, transform: "none" }}
-              >
-                <div className="text-sm text-gray-400">Specialty</div>
-                <div className="text-base font-semibold text-white">
-                  Full Stack & Software Development
-                </div>
-              </div>
-              <div
-                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center"
-                style={{ opacity: 1, transform: "none" }}
-              >
-                <div className="text-sm text-gray-400">Focus</div>
-                <div className="text-base font-semibold text-white">
-                  Performance & UX
-                </div>
-              </div>
-            </div>
-            <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
-              <a
+            </motion.p>
+
+            {/* Info Cards */}
+            <motion.div
+              className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-xl"
+              variants={container}
+            >
+              {[
+                { label: "Experience", value: "1+ years" },
+                { label: "Specialty", value: "Full Stack & Software Development" },
+                { label: "Focus", value: "Performance & UX" },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center hover:bg-white/10 transition"
+                  variants={fadeUp}
+                  custom={0.7 + i * 0.1}
+                >
+                  <div className="text-sm text-gray-400">{item.label}</div>
+                  <div className="text-base font-semibold text-white">
+                    {item.value}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Buttons */}
+            <motion.div
+              className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start"
+              variants={fadeUp}
+              custom={1.2}
+            >
+              <motion.a
+                whileHover={{ scale: 1.05 }}
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-lg bg-white text-black font-semibold px-5 py-3 hover:bg-gray-200 transition"
-                aria-label="View my projects"
               >
                 View Projects
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white px-5 py-3 hover:bg-white/20 transition"
-                aria-label="Get in touch"
               >
                 Get in Touch
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="grid md:grid-cols-1">
-          <div
-            className="text-center md:text-left"
-            style={{ opacity: 1, transform: "none" }}
-          >
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* About Me Text Section */}
+        <motion.div
+          className="grid md:grid-cols-1"
+          variants={fadeUp}
+          custom={1.4}
+        >
+          <motion.div className="text-center md:text-left" variants={fadeUp}>
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
               About Me
             </h3>
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              I’m a Software Developer and Web Developer dedicated to crafting
+              I&apos;m a Software Developer and Web Developer dedicated to crafting
               high-performance, scalable, and visually engaging digital
               experiences. My expertise lies in building modern web applications
               using cutting-edge technologies, with a strong focus on clean
-              architecture, efficient code, and responsive design. I enjoy
-              solving complex problems and transforming ideas into functional,
-              intuitive products that enhance user experience.
+              architecture, efficient code, and responsive design.
             </p>
             <p className="mt-4 text-gray-400 text-base sm:text-lg">
               I love turning ideas into scalable, user-friendly products that
               make an impact.
             </p>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
