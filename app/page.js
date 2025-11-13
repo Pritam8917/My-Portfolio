@@ -12,7 +12,6 @@ import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { GiSkills, GiNothingToSay } from "react-icons/gi";
 import { MdWorkOutline } from "react-icons/md";
 
-
 export default function SpotlightNewDemo() {
   const words = [{ text: "Software Developer" }];
   const navItems = [
@@ -131,7 +130,8 @@ export default function SpotlightNewDemo() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               href="/assets/Pritam_resume.pdf"
-              download=""
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg transition-all duration-300"
             >
               My Resume
