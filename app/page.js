@@ -130,8 +130,7 @@ export default function SpotlightNewDemo() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               href="/assets/Pritam_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download=""
               className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg transition-all duration-300"
             >
               My Resume
