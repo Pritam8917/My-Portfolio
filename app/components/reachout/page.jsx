@@ -1,6 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+// Wrap Next.js Image with motion
+const MotionImage = motion(Image);
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,7 +23,6 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: add your form handling logic (e.g., API call, email service, etc.)
     console.log("Form submitted:", formData);
     alert("Thank you for reaching out! I’ll get back to you soon.");
     setFormData({ name: "", email: "", service: "", idea: "" });
@@ -27,21 +31,23 @@ const ContactPage = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-black text-white  px-6 md:px-20 flex flex-col md:flex-row items-center gap-10 py-10 md:py-20 "
+      className="min-h-screen bg-black text-white px-6 md:px-20 flex flex-col md:flex-row items-center gap-10 py-15 md:py-20"
     >
       {/* Left Image Section */}
       <div className="w-full md:w-1/2 flex justify-center">
         <motion.img
           alt="Contact Illustration"
           src="/assets/contactbot.png"
-          className="w-82 md:w-140 rounded-2xl shadow-lg object-cover"
+          width={550} 
+          height={550} 
+          className="rounded-2xl shadow-lg object-cover w-64 sm:w-80 md:w-96 lg:w-[550px]"
           animate={{
-            y: [0, -20, 0], // moves up 20px and back down smoothly
+            y: [0, -20, 0],
           }}
           transition={{
-            duration: 3, // time for one full up-down cycle
+            duration: 3,
             ease: "easeInOut",
-            repeat: Infinity, // loops forever
+            repeat: Infinity,
           }}
         />
       </div>
@@ -82,6 +88,7 @@ const ContactPage = () => {
               required
             />
           </div>
+
           {/* Idea */}
           <div className="flex flex-col">
             <label className="mb-1">
@@ -90,12 +97,12 @@ const ContactPage = () => {
             <textarea
               name="idea"
               placeholder="Explain your idea..."
-              rows="5"
+              rows={5}
               value={formData.idea}
               onChange={handleChange}
               className="p-3 rounded-md bg-white/10 text-white border border-gray-500 focus:outline-none focus:border-blue-500 resize-none"
               required
-            ></textarea>
+            />
           </div>
 
           {/* Submit */}

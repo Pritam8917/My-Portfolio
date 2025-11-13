@@ -11,22 +11,56 @@ import { FloatingNav } from "./components/ui/floating-navbar";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { GiSkills, GiNothingToSay } from "react-icons/gi";
 import { MdWorkOutline } from "react-icons/md";
-import Image from "next/image";
+
 
 export default function SpotlightNewDemo() {
   const words = [{ text: "Software Developer" }];
   const navItems = [
-    { name: "Home", id: "#", icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" /> },
-    { name: "About", id: "#about", icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" /> },
-    { name: "Skills", id: "#skills", icon: <GiSkills className="h-4 w-4 text-neutral-500 dark:text-white" /> },
-    { name: "Projects", id: "#projects", icon: <IoCodeSlash className="h-4 w-4 text-neutral-500 dark:text-white" /> },
-    { name: "Experience", id: "#experience", icon: <MdWorkOutline className="h-4 w-4 text-neutral-500 dark:text-white" /> },
-    { name: "Testimonials", id: "#testimonials", icon: <GiNothingToSay className="h-4 w-4 text-neutral-500 dark:text-white" /> },
+    {
+      name: "Home",
+      id: "#",
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "About",
+      id: "#about",
+      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Skills",
+      id: "#skills",
+      icon: <GiSkills className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Projects",
+      id: "#projects",
+      icon: (
+        <IoCodeSlash className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+    },
+    {
+      name: "Experience",
+      id: "#experience",
+      icon: (
+        <MdWorkOutline className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+    },
+    {
+      name: "Testimonials",
+      id: "#testimonials",
+      icon: (
+        <GiNothingToSay className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+    },
   ];
 
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, staggerChildren: 0.2 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, staggerChildren: 0.2 },
+    },
   };
 
   const itemVariants = {
@@ -55,26 +89,30 @@ export default function SpotlightNewDemo() {
         animate="visible"
       >
         {/* Left Section */}
-        <motion.div className="flex flex-col mt-20 h-full text-center lg:text-left relative" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col mt-20 h-full text-center lg:text-left relative"
+          variants={itemVariants}
+        >
           <div className="w-full lg:pr-24 mx-auto max-w-[48rem]">
-            <div className="mb-2 text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide">
+            <div className="mb-2 text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide flex justify-center items-center text-center lg:justify-start md:items-start">
               <TypewriterEffectSmooth words={words} />
             </div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63]"
+              className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1CD8D2] via-[#00bf8f] to-[#302b63]"
               variants={itemVariants}
             >
               Hello, I&apos;m
               <br />
-              <span className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:whitespace-nowrap lg:leading-[1.1]">
+              <span className="text-white font-bold text-5xl sm:text-5xl md:text-6xl lg:text-7xl lg:whitespace-nowrap lg:leading-[1.5] leading-[1.3] sm:leading-[1.4] md:leading-[1.4]">
                 Pritam Das Adhikari
               </span>
             </motion.h1>
 
             <motion.p className="text-xl pt-6" variants={itemVariants}>
-              I turn complex ideas into seamless, high-impact web experiences — building modern, scalable, and
-              lightning-fast applications that make a difference.
+              I turn complex ideas into seamless, high-impact web experiences —
+              building modern, scalable, and lightning-fast applications that
+              make a difference.
             </motion.p>
           </div>
 
@@ -105,15 +143,25 @@ export default function SpotlightNewDemo() {
             className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6"
             variants={itemVariants}
           >
-            {[BsTwitterX, FaLinkedinIn, ImGithub].map((Icon, i) => (
-              <motion.div
+            {[
+              { Icon: BsTwitterX, url: "https://twitter.com/yourhandle" },
+              {
+                Icon: FaLinkedinIn,
+                url: "https://www.linkedin.com/in/pritam-das-adhikari-018b352a2/",
+              },
+              { Icon: ImGithub, url: "https://github.com/Pritam8917" },
+            ].map(({ Icon, url }, i) => (
+              <motion.a
                 key={i}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="cursor-pointer text-white"
               >
                 <Icon className="h-8 w-8" />
-              </motion.div>
+              </motion.a>
             ))}
           </motion.div>
         </motion.div>

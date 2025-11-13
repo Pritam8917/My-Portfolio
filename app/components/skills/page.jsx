@@ -15,10 +15,7 @@ export default function SkillsPage() {
     { icon: <FaJava className="text-[#1CD8D2]" />, name: "Java" },
     { icon: <FaReact className="text-[#1CD8D2]" />, name: "React.js" },
     { icon: <SiNextdotjs className="text-[#1CD8D2]" />, name: "Next.js" },
-    {
-      icon: <SiTailwindcss className="text-[#1CD8D2]" />,
-      name: "Tailwind CSS",
-    },
+    { icon: <SiTailwindcss className="text-[#1CD8D2]" />, name: "Tailwind CSS" },
     { icon: <FaNodeJs className="text-[#1CD8D2]" />, name: "Node.js" },
     { icon: <SiMongodb className="text-[#1CD8D2]" />, name: "MongoDB" },
     { icon: <SiExpress className="text-[#1CD8D2]" />, name: "Express.js" },
@@ -48,11 +45,11 @@ export default function SkillsPage() {
           animate={{ x: ["0%", "-100%"] }}
           transition={{
             ease: "linear",
-            duration: 20,
+            duration: 10,
             repeat: Infinity,
           }}
         >
-          {[...skills, ...skills, ...skills, ...skills].map((skill, i) => (
+          {[...skills, ...skills, ...skills, ...skills, ...skills].map((skill, i) => (
             <div
               key={i}
               className="flex flex-col items-center justify-center text-center"
