@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { AnimatedTestimonials } from "../ui/animated-testimonials";
-import { BackgroundLines } from "../ui/background-lines";
+import { AnimatedTestimonials } from "./ui/animated-testimonials";
+import { BackgroundLines } from "./ui/background-lines";
 
 export default function Testimonials() {
   const testimonials = [
