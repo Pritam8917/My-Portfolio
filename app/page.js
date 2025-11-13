@@ -130,7 +130,7 @@ export default function SpotlightNewDemo() {
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="/Resume.pdf"
+              href="/assets/Pritam_resume.pdf"
               download=""
               className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg transition-all duration-300"
             >
@@ -144,7 +144,7 @@ export default function SpotlightNewDemo() {
             variants={itemVariants}
           >
             {[
-              { Icon: BsTwitterX, url: "https://twitter.com/yourhandle" },
+              { Icon: BsTwitterX, url: "https://x.com/PritamDasA95722" },
               {
                 Icon: FaLinkedinIn,
                 url: "https://www.linkedin.com/in/pritam-das-adhikari-018b352a2/",

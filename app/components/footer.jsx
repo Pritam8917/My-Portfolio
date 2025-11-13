@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Social icons */}
           <div className="flex gap-8 text-2xl md:text-3xl text-gray-300">
             <a
-              href="https://x.com/gauravbuilds"
+              href="https://x.com/PritamDasA95722"
               aria-label="X"
               target="_blank"
               rel="noopener noreferrer"
