@@ -26,10 +26,6 @@ export default function Experience() {
       id="experience"
       className="relative py-24 pb-0 px-6 overflow-hidden "
     >
-      {/* Background glow */}
-          <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-125 h-125 bg-cyan-500/20 blur-[140px] rounded-full" />
-        </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
 

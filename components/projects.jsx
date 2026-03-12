@@ -11,8 +11,8 @@ const projects = [
       "AI-powered crop yield prediction and field-level diagnosis platform helping farmers make data-driven decisions.",
     tech: ["Next.js", "React", "AI/ML", "Tailwind"],
     image: "/assets/krishiai.png",
-    github: "#",
-    live: "#",
+    github: "https://github.com/Pritam8917/KrishiAI",
+    live: "https://krishi-ai-weld-nine.vercel.app/",
   },
   {
       title: "Unimart",
@@ -20,8 +20,8 @@ const projects = [
       "A modern e-commerce platform where users can browse products, add items to cart, and securely place orders with a smooth and responsive shopping experience.",
       tech: ["Next.js", "React", "Tailwind", "Node.js", "MongoDB"],
       image: "/assets/unimart.png",
-      github: "#",
-      live: "#",
+      github: "https://github.com/Pritam8917/Unimart_e-commerce",
+      live: "https://unimart-e-commerce.vercel.app/",
     },
     {
         title: "NeerNaya",
@@ -29,7 +29,7 @@ const projects = [
         "A smart water management platform where users can order water monitoring devices and view important water quality parameters such as pH, turbidity, and purity in real time.",
         tech: ["Next.js", "Tailwind", "Framer Motion"],
         image: "/assets/neernaya.jpeg",
-        github: "#",
+        github: "https://github.com/Pritam8917/neernaya",
         live: "#",
     },
     {
@@ -38,8 +38,8 @@ const projects = [
         "Official IEEE VSSUT Student Branch website built with modern UI and responsive design.",
       tech: ["Next.js", "Tailwind", "Framer Motion"],
       image: "/assets/ieee.png",
-      github: "#",
-      live: "#",
+      github: "https://github.com/Pritam8917/ieee-web#",
+      live: "https://ieee-vssut-sb.netlify.app/",
     },
 ];
 
@@ -119,6 +119,8 @@ export default function Projects() {
                   <a
                     href={project.github}
                     className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-300 hover:text-indigo-400 transition"
+                      target="_blank"
+  rel="noopener noreferrer"
                   >
                     <Github size={16} />
                     Code
@@ -127,6 +129,8 @@ export default function Projects() {
                   <a
                     href={project.live}
                     className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-300 hover:text-indigo-400 transition"
+                      target="_blank"
+  rel="noopener noreferrer"
                   >
                     <ExternalLink size={16} />
                     Live
