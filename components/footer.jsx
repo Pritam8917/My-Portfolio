@@ -88,7 +88,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="text-xs sm:text-sm text-gray-400">
-          © 2025 Pritam. All rights reserved.
+            &copy; {new Date().getFullYear()} Pritam Das Adhikari. All rights reserved.
         </p>
 
       </div>

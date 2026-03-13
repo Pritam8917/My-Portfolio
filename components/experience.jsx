@@ -24,7 +24,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 pb-0 px-6 overflow-hidden "
+      className="relative py-27 pb-0 px-6 overflow-hidden "
     >
 
       <div className="max-w-5xl mx-auto relative z-10">

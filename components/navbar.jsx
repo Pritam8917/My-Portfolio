@@ -100,10 +100,10 @@ export function Navbar() {
             key={link.href}
             href={link.href}
             className={`transition font-medium ${
-              activeSection === link.href.replace("#", "")
-                ? "text-blue-400"
-                : "text-white hover:text-blue-400"
-            }`}
+  activeSection === link.href.replace("#", "")
+    ? "text-blue-400"
+    : "text-white hover:text-blue-400"
+}`}
           >
             {link.label}
           </Link>
@@ -119,7 +119,7 @@ export function Navbar() {
           bg-white/10 border border-white/10
           backdrop-blur-lg
           hover:bg-white/20
-          transition "
+          transition cursor-pointer"
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -157,7 +157,7 @@ export function Navbar() {
             <button
               onClick={() => setIsOpen(false)}
               className="p-2 w-9 h-9 rounded-md
-              hover:bg-white/10 transition"
+              hover:bg-white/10 transition cursor-pointer"
             >
               <X size={18} />
             </button>
