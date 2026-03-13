@@ -21,7 +21,7 @@ useEffect(() => {
       id="home"
       className="min-h-screen flex items-center justify-center px-6 lg:px-16 py-10 pb-0 relative"
     >
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-18 lg:py-20 pb-0">
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-6 lg:py-20 pb-0">
 {/* LEFT SIDE - HERO */}
 <motion.div
   initial={isMobile ? { opacity: 0, y: 40 } : { opacity: 0, x: -80 }}
