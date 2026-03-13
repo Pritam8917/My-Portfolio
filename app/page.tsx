@@ -105,7 +105,7 @@ export default function Home() {
                 &apos;Software Developer&apos;
               </span>
               ,{"\n  "}institute:{" "}
-              <span className="text-green-400">&apos;VSSUT, Burla, Sambalpur&apos;</span>,
+              <span className="text-green-400">&apos;VSSUT, Burla&apos;</span>,
               {"\n  "}location:{" "}
               <span className="text-green-400">&apos;Odisha, India&apos;</span>,
               {"\n  "}passions: [{"\n    "}
@@ -113,13 +113,13 @@ export default function Home() {
                 &apos;Web Development&apos;
               </span>
               ,{"\n    "}
-              <span className="text-green-400">&apos;AI&apos;</span>,{"\n    "}
+              <span className="text-green-400">&apos;AI/ML&apos;</span>,{"\n    "}
               <span className="text-green-400">
                 &apos;Problem Solving&apos;
               </span>
               {"\n  "}],
               {"\n  "}currentlyLearning:{" "}
-              <span className="text-green-400">&apos;System Design & AI/ML&apos;</span>,
+              <span className="text-green-400">&apos;AI/ML&apos;</span>,
               {"\n  "}openForWork: <span className="text-orange-400">true</span>
               {"\n"}
               {"}"};{"\n\n"}
