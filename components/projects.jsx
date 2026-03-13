@@ -13,34 +13,38 @@ const projects = [
     image: "/assets/krishiai.png",
     github: "https://github.com/Pritam8917/KrishiAI",
     live: "https://krishi-ai-weld-nine.vercel.app/",
+    status: "Completed",
   },
   {
-      title: "Unimart",
-      description:
-      "A modern e-commerce platform where users can browse products, add items to cart, and securely place orders with a smooth and responsive shopping experience.",
-      tech: ["Next.js", "React", "Tailwind", "Node.js", "MongoDB"],
-      image: "/assets/unimart.png",
-      github: "https://github.com/Pritam8917/Unimart_e-commerce",
-      live: "https://unimart-e-commerce.vercel.app/",
-    },
-    {
-        title: "NeerNaya",
-        description:
-        "A smart water management platform where users can order water monitoring devices and view important water quality parameters such as pH, turbidity, and purity in real time.",
-        tech: ["Next.js", "Tailwind", "Framer Motion"],
-        image: "/assets/neernaya.jpeg",
-        github: "https://github.com/Pritam8917/neernaya",
-        live: "#",
-    },
-    {
-      title: "IEEE VSSUT Website",
-      description:
-        "Official IEEE VSSUT Student Branch website built with modern UI and responsive design.",
-      tech: ["Next.js", "Tailwind", "Framer Motion"],
-      image: "/assets/ieee.png",
-      github: "https://github.com/Pritam8917/ieee-web#",
-      live: "https://ieee-vssut-sb.netlify.app/",
-    },
+    title: "Unimart",
+    description:
+      "A modern e-commerce platform where users can browse products, add items to cart, and securely place orders.",
+    tech: ["Next.js", "React", "Tailwind", "Node.js", "MongoDB"],
+    image: "/assets/unimart.png",
+    github: "https://github.com/Pritam8917/Unimart_e-commerce",
+    live: "https://unimart-e-commerce.vercel.app/",
+    status: "Completed",
+  },
+  {
+    title: "NeerNaya",
+    description:
+      "A smart water management platform where users can monitor water quality parameters.",
+    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    image: "/assets/neernaya.jpeg",
+    github: "https://github.com/Pritam8917/neernaya",
+    live: "#",
+    status: "Ongoing",
+  },
+  {
+    title: "IEEE VSSUT Website",
+    description:
+      "Official IEEE VSSUT Student Branch website built with modern UI.",
+    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    image: "/assets/ieee.png",
+    github: "https://github.com/Pritam8917/ieee-web",
+    live: "https://ieee-vssut-sb.netlify.app/",
+    status: "Completed",
+  },
 ];
 
 export default function Projects() {
@@ -94,9 +98,31 @@ export default function Projects() {
 
               {/* Content */}
               <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-xl font-semibold mb-2 sm:mb-3">
-                  {project.title}
-                </h3>
+                <div className="flex items-start justify-between mb-2 sm:mb-3">
+                  <h3 className="text-base sm:text-xl font-semibold">
+                    {project.title}
+                  </h3>
+
+                  {/* Status Badge */}
+                  <span
+                    className={`flex items-center gap-1 text-[10px] sm:text-xs px-2 py-1 rounded-full border
+  ${
+    project.status === "Completed"
+      ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
+      : "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
+  }`}
+                  >
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+                        project.status === "Completed"
+                          ? "bg-indigo-400"
+                          : "bg-cyan-400"
+                      }`}
+                    ></span>
+
+                    {project.status}
+                  </span>
+                </div>
 
                 <p className="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-5 leading-relaxed">
                   {project.description}
@@ -119,8 +145,8 @@ export default function Projects() {
                   <a
                     href={project.github}
                     className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-300 hover:text-indigo-400 transition"
-                      target="_blank"
-  rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Github size={16} />
                     Code
@@ -129,8 +155,8 @@ export default function Projects() {
                   <a
                     href={project.live}
                     className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-300 hover:text-indigo-400 transition"
-                      target="_blank"
-  rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <ExternalLink size={16} />
                     Live

@@ -10,6 +10,15 @@ const experiences = [
     period: "2024 - Present",
     description:
       "Developed and maintained the official IEEE VSSUT Student Branch website using Next.js and Tailwind CSS.",
+    Status: "Onsite",
+  },
+  {
+    role: "Web Developer Intern",
+    company: "BlueStock Fintech",
+    period: "Oct 2025 - Nov 2025",
+    description:
+      "Contributed on admin and user dashboard development using Next.js and Node.js, enhancing user experience and functionality.",
+    Status: "Remote",
   },
   {
     role: "Project Intern",
@@ -17,6 +26,7 @@ const experiences = [
     period: "Dec 2025 - Jan 2026",
     description:
       "Developed KrishiAI, an AI-powered crop yield prediction and field-level diagnosis platform designed to help farmers optimize crop productivity using data-driven insights.",
+    Status: "Onsite",
   },
 ];
 
@@ -26,9 +36,7 @@ export default function Experience() {
       id="experience"
       className="relative py-27 pb-0 px-6 overflow-hidden "
     >
-
       <div className="max-w-5xl mx-auto relative z-10">
-
         {/* Heading */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -45,7 +53,6 @@ export default function Experience() {
 
         {/* Timeline container */}
         <div className="relative">
-
           {/* Vertical line */}
           <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-linear-to-b from-indigo-500 via-cyan-400 to-transparent"></div>
 
@@ -70,24 +77,32 @@ export default function Experience() {
 
                 {/* Card */}
                 <div
-                  className={`ml-12 md:ml-0 md:w-[45%] p-6 rounded-xl
-                  bg-white/5 backdrop-blur-md
-                  border border-white/10
-                  hover:border-indigo-500/40
-                  transition
-                  hover:-translate-y-1`}
+                  className={`relative ml-12 md:ml-0 md:w-[45%] p-6 rounded-xl
+  bg-white/5 backdrop-blur-md
+  border border-white/10
+  hover:border-indigo-500/40
+  transition
+  hover:-translate-y-1`}
                 >
+                  {/* Status Badge */}
+                  <div className="absolute top-7 right-4 flex items-center gap-2 text-xs font-bold text-gray-300">
+                    <span
+                      className={`w-2 h-2 rounded-full ${
+                        exp.Status === "Remote"
+                          ? "bg-green-400"
+                          : "bg-indigo-400"
+                      }`}
+                    ></span>
+                    {exp.Status}
+                  </div>
+
                   <h3 className="text-lg font-semibold text-white">
                     {exp.role}
                   </h3>
 
-                  <p className="text-indigo-400 text-sm mt-1">
-                    {exp.company}
-                  </p>
+                  <p className="text-indigo-400 text-sm mt-1">{exp.company}</p>
 
-                  <span className="text-gray-400 text-xs">
-                    {exp.period}
-                  </span>
+                  <span className="text-gray-400 text-xs">{exp.period}</span>
 
                   <p className="text-gray-400 mt-3 text-sm leading-relaxed">
                     {exp.description}

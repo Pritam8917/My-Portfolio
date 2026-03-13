@@ -157,7 +157,7 @@ export function Navbar() {
             <button
               onClick={() => setIsOpen(false)}
               className="p-2 w-9 h-9 rounded-md
-              hover:bg-white/10 transition cursor-pointer"
+              hover:bg-white/20 transition cursor-pointer  bg-white/10 border border-white/10"
             >
               <X size={18} />
             </button>
@@ -168,7 +168,7 @@ export function Navbar() {
             <Link
               href="#"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition [&>svg]:text-indigo-400 hover:[&>svg]:text-cyan-400"
             >
               <Home size={18} />
               Home
@@ -177,7 +177,7 @@ export function Navbar() {
             <Link
               href="#about"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition [&>svg]:text-indigo-400 hover:[&>svg]:text-cyan-400"
             >
               <User size={18} />
               About
@@ -186,7 +186,7 @@ export function Navbar() {
             <Link
               href="#skills"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition [&>svg]:text-indigo-400 hover:[&>svg]:text-cyan-400"
             >
               <Code size={18} />
               Skills
@@ -195,7 +195,7 @@ export function Navbar() {
             <Link
               href="#experience"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition"
+             className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition [&>svg]:text-indigo-400 hover:[&>svg]:text-cyan-400"
             >
               <Briefcase size={18} />
               Experience
@@ -204,7 +204,7 @@ export function Navbar() {
             <Link
               href="#projects"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition [&>svg]:text-indigo-400 hover:[&>svg]:text-cyan-400"
             >
               <FolderGit2 size={18} />
               Projects
@@ -213,7 +213,7 @@ export function Navbar() {
             <Link
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition [&>svg]:text-indigo-400 hover:[&>svg]:text-cyan-400"
             >
               <Mail size={18} />
               Get in Touch
@@ -223,17 +223,17 @@ export function Navbar() {
           {/* CONTACT INFO */}
           <div className="border-t border-white/10 px-6 py-6 text-sm text-gray-400 space-y-3">
             <div className="flex items-center gap-3">
-              <Phone size={16} />
+              <Phone size={16}className="text-indigo-400" />
               <span>+91-8917612959</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <Mail size={16} />
+              <Mail size={16} className="text-indigo-400" />
               <span>pritamdasadhikari8917@gmail.com</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <MapPin size={16} />
+              <MapPin size={16} className="text-indigo-400" />
               <span>Odisha, India</span>
             </div>
           </div>
@@ -249,7 +249,7 @@ export function Navbar() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition hover:scale-110"
+                  className="text-gray-400 hover:text-indigo-400 transition hover:scale-110"
                 >
                   <Icon size={20} />
                 </Link>
