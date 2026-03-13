@@ -3,8 +3,19 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import Link from "next/link";
-
+import { useEffect, useState } from "react";
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 1024); // below lg
+  };
+
+  handleResize();
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
   return (
     <section
       id="home"
@@ -12,7 +23,12 @@ export default function Home() {
     >
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-18 lg:py-20 pb-0">
 {/* LEFT SIDE - HERO */}
-<div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl">
+<motion.div
+  initial={isMobile ? { opacity: 0, y: 40 } : { opacity: 0, x: -80 }}
+  animate={{ opacity: 1, x: 0, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl"
+>
 
   {/* Badge */}
   <span className="px-4 py-1 text-xs rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-6">
@@ -56,12 +72,13 @@ export default function Home() {
       Download Resume <Download size={16} />
     </Link>
   </div>
-</div>
+</motion.div>
 
 {/* RIGHT SIDE - DEV CODE CARD */}
 <motion.div
-  initial={{ opacity: 0, x: 50 }}
-  animate={{ opacity: 1, x: 0 }}
+  initial={isMobile ? { opacity: 0, y: 40 } : { opacity: 0, x: 80 }}
+  animate={{ opacity: 1, x: 0, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
   className="w-full"
 >
   <div className="rounded-xl border border-white/10 bg-[#0b0b0b] p-6 font-mono text-sm text-gray-300 shadow-lg min-h-120">
