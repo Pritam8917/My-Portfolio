@@ -1,117 +1,110 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import Link from "next/link";
+
 export default function Home() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center
-px-4 sm:px-6 md:px-10 lg:px-16 
- sm:pt-20 lg:pt-10 
-overflow-hidden" id="home">
-      {/* Background Glow */}
-      {/* Background Glow */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-20 left-1/3 w-100 h-100 
-  bg-purple-500/10 rounded-full blur-[120px]"
-        />
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-6 lg:px-16 py-10 pb-0 relative"
+    >
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-18 lg:py-20 pb-0">
+{/* LEFT SIDE - HERO */}
+<div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl">
 
-        <div
-          className="absolute bottom-10 right-1/3 w-87.5 h-87.5 
-  bg-cyan-500/10 rounded-full blur-[120px]"
-        />
+  {/* Badge */}
+  <span className="px-4 py-1 text-xs rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-6">
+    Open to Opportunities
+  </span>
+
+  {/* Title */}
+  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+    Hi, I&apos;m{" "}
+    <span className="bg-linear-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">
+      Pritam Das Adhikari
+    </span>
+  </h1>
+
+  {/* Subtitle */}
+  <p className="text-xm text-gray-300 mb-3 font-mono">
+    Software Developer . Problem Solver . Tech Enthusiast
+  </p>
+
+  {/* Description */}
+  <p className="text-gray-400 max-w-lg mb-8 mt-5 text-lg">
+    I build fast, modern, and scalable web applications using modern
+    technologies. Passionate about creating meaningful digital
+    experiences and solving real-world problems through code.
+  </p>
+
+  {/* Buttons */}
+  <div className="flex flex-col sm:flex-row gap-4">
+    <Link
+      href="#projects"
+      className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-linear-to-r from-indigo-500 to-purple-500 text-white font-medium hover:opacity-90"
+    >
+      View Projects <ArrowDown size={16} />
+    </Link>
+
+    <Link
+      href="/assets/pritam-resume.pdf"
+      target="_blank"
+      className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-white/20 hover:bg-white/10"
+    >
+      Download Resume <Download size={16} />
+    </Link>
+  </div>
+</div>
+
+{/* RIGHT SIDE - DEV CODE CARD */}
+<motion.div
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  className="w-full"
+>
+  <div className="rounded-xl border border-white/10 bg-[#0b0b0b] p-6 font-mono text-sm text-gray-300 shadow-lg min-h-120">
+
+    {/* Terminal Header */}
+    <div className="flex justify-between items-center mb-5">
+      <div className="flex gap-2">
+        <span className="w-3 h-3 bg-red-500 rounded-full"></span>
+        <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
+        <span className="w-3 h-3 bg-green-500 rounded-full"></span>
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center mb-4">
-        {/* Profile Image */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-10"
-        >
-          <div className="w-32 h-32 rounded-full overflow-hidden ring-2 ring-indigo-500/40 ring-offset-4 ring-offset-black">
-            <Image
-              src="/assets/profile.jpg"
-              width={128}
-              height={128}
-              alt="Profile"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
+      <span className="text-xs text-gray-500">DEV_PROFILE.JS</span>
+    </div>
 
-        {/* Badge */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.1, duration: 0.6 }}
-          className="mb-4"
-        >
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-            Open to opportunities
-          </span>
-        </motion.div>
+    <pre className="leading-relaxed">
+<span className="text-blue-400">const</span> me = {"{"}
+{"\n  "}name: <span className="text-green-400">&apos;Pritam Das Adhikari&apos;</span>,
+{"\n  "}role: <span className="text-green-400">&apos;Software Developer&apos;</span>,
+{"\n  "}college: <span className="text-green-400">&apos;VSSUT, Burla&apos;</span>,
+{"\n  "}location: <span className="text-green-400">&apos;Odisha, India&apos;</span>,
+{"\n  "}passions: [
+{"\n    "}<span className="text-green-400">&apos;Web Development&apos;</span>,
+{"\n    "}<span className="text-green-400">&apos;AI&apos;</span>,
+{"\n    "}<span className="text-green-400">&apos;Problem Solving&apos;</span>
+{"\n  "}],
+{"\n  "}hardWorker: <span className="text-orange-400">true</span>,
+{"\n  "}openForWork: <span className="text-orange-400">true</span>
+{"\n"}{"}"};
 
-        {/* Title */}
-        <motion.h1
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
-        >
-          Hi, I&apos;m{" "}
-          <span className="bg-linear-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">
-            Pritam Das Adhikari
-          </span>
-        </motion.h1>
+{"\n\n"}
+<span className="text-blue-400">function</span>{" "}
+<span className="text-yellow-400">buildCoolThings</span>() {"{"}
+{"\n  "}return <span className="text-green-400">&quot;Always building 🚀&quot;</span>;
+{"\n"}{"}"}
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-gray-400 mb-4 font-mono text-sm md:text-lg"
-        >
-          Software Developer · Problem Solver · Tech Enthusiast
-        </motion.p>
+{"\n\n"}
+console.<span className="text-yellow-400">log</span>(buildCoolThings());
+    </pre>
 
-        {/* Description */}
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-gray-400 max-w-xl mb-6 leading-relaxed"
-        >
-          I craft performant, accessible web experiences with modern
-          technologies. Passionate about clean code, great design, and shipping
-          products that matter.
-        </motion.p>
+  </div>
+</motion.div>
 
-        {/* Buttons */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4"
-        >
-          <Link
-            href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-linear-to-r from-indigo-500 to-purple-500 text-white font-medium hover:opacity-90 transition-all"
-          >
-            View Projects <ArrowDown size={16} />
-          </Link>
-
-          <Link
-            href="/assets/pritam-resume.pdf"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 text-gray-200 font-medium hover:bg-white/10 transition-colors"
-            download="pritam-resume.pdf"
-          >
-            Download Resume <Download size={16} />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ export default function Contact () {
           src="/assets/contactbot.png"
           width={550} 
           height={550} 
-          className="rounded-2xl shadow-lg object-cover w-64 sm:w-80 md:w-96 lg:w-137.5"
+          className="rounded-2xl shadow-lg object-cover w-75 sm:w-80 md:w-96 lg:w-137.5"
           animate={{
             y: [0, -20, 0],
           }}
