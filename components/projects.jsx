@@ -6,20 +6,54 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "KrishiAI",
+    title: "KrishiAI – AI Powered        Crop Yield Prediction Platform",
     description:
-      "AI-powered crop yield prediction and field-level diagnosis platform helping farmers make data-driven decisions.",
-    tech: ["Next.js", "React", "AI/ML", "Tailwind"],
+      "An AI-driven agricultural intelligence platform that predicts crop yield and provides data-driven farming recommendations using machine learning models, weather data, and soil analysis to help farmers make smarter decisions.",
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Python",
+      "Framer Motion",
+      "Machine Learning",
+      "Scikit-learn",
+      "Pytorch",
+      "Supabase",
+    ],
     image: "/assets/krishiai.png",
     github: "https://github.com/Pritam8917/KrishiAI",
     live: "https://krishi-ai-weld-nine.vercel.app/",
     status: "Completed",
   },
   {
+    title: "ResumeIQ – AI Resume Intelligence Platform",
+    description:
+      "An AI-powered resume analysis platform that evaluates resumes, extracts skills, calculates ATS scores, matches resumes with job descriptions, and provides AI-driven improvement suggestions and interview questions.",
+    tech: [
+      "Next.js",
+      "Framer Motion",
+      "Tailwind CSS",
+      "NLP",
+      "Puter.js",
+      "MongoDB",
+      "pdf-parse",
+    ],
+    image: "/assets/resumeiq.png",
+    github: "#",
+    live: "#",
+    status: "Ongoing",
+  },
+  {
     title: "Unimart",
     description:
       "A modern e-commerce platform where users can browse products, add items to cart, and securely place orders.",
-    tech: ["Next.js", "React", "Tailwind", "Node.js", "MongoDB"],
+    tech: [
+      "Next.js",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Framer Motion",
+      "Stripe",
+    ],
     image: "/assets/unimart.png",
     github: "https://github.com/Pritam8917/Unimart_e-commerce",
     live: "https://unimart-e-commerce.vercel.app/",
@@ -29,7 +63,7 @@ const projects = [
     title: "NeerNaya",
     description:
       "A smart water management platform where users can monitor water quality parameters.",
-    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
     image: "/assets/neernaya.jpeg",
     github: "https://github.com/Pritam8917/neernaya",
     live: "#",
@@ -39,7 +73,7 @@ const projects = [
     title: "IEEE VSSUT Website",
     description:
       "Official IEEE VSSUT Student Branch website built with modern UI.",
-    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
     image: "/assets/ieee.png",
     github: "https://github.com/Pritam8917/ieee-web",
     live: "https://ieee-vssut-sb.netlify.app/",
