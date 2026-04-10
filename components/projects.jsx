@@ -21,7 +21,7 @@ const projects = [
     ],
     image: "/assets/krishiai.png",
     github: "https://github.com/Pritam8917/KrishiAI",
-    live: "https://krishi-ai-weld-nine.vercel.app/",
+    live: "https://krishi-ai-virid.vercel.app/",
     status: "Completed",
   },
   {
