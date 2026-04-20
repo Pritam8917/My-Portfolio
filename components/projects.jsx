@@ -64,7 +64,7 @@ const projects = [
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
     image: "/assets/neernaya.jpeg",
     github: "https://github.com/Pritam8917/neernaya",
-    live: "https://neernaya.vercel.app/",
+    live: "https://www.neernaya.com/",
     status: "Ongoing",
   },
   {
