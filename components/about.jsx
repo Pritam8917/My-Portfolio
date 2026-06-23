@@ -113,7 +113,7 @@ export default function About() {
             {/* CGPA */}
             <p className="text-sm mt-3">
               <span className="text-gray-400">CGPA: </span>
-              <span className="text-indigo-400 font-md">7.92</span>
+              <span className="text-indigo-400 font-md">8.00</span>
             </p>
           </motion.div>
 
